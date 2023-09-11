@@ -115,3 +115,23 @@ nav{
 .texto-integral h1{
     font-size: xx-large;
 }
+
+.integral {
+    text-align: center;
+    background-color: rgb(195, 208, 228);
+    border-radius: 12px;
+    display: flex;
+    margin-left: 32%;
+    margin-right: 35%;
+    flex-direction: row;
+    align-items: center;
+    padding: 30px;
+    width: 35%; 
+  }
+
+ #resultado{
+    background-color: rgb(195, 208, 228);
+    border-radius: 12px;
+    height: 30%;
+    text-align: center;
+ } 
