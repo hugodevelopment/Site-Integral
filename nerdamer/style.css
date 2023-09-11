@@ -1,0 +1,117 @@
+/* Definições gerais do site */
+*{
+    margin:0;
+    padding: 0;
+    border: 0;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: large;
+    box-sizing: border-box;
+}
+
+body{
+  min-height:100vh;
+  min-width: 100vw;
+  display: flex;
+}
+
+h1{
+    color: rgb(195, 208, 228);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    font-size: xx-large;
+}
+
+h2{
+  color:rgb(230, 129, 146);
+  text-align: center;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+a{
+  color:floralwhite;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+p{
+    color: rgb(195, 208, 228);
+    font-size: 1rem;
+    font-weight: bolder;
+}
+
+li{
+ color: floralwhite;
+ display: inline-flex;
+ margin:  15px 20px;
+ justify-content: space-between;    
+} 
+
+/* classe Principal do site e das divs */
+main{
+    height: auto;
+    padding:0% 0.1%;
+    background-image: url(fundo1.jpg);
+}
+
+header{
+  background-color:#fff5fc;
+  height: 85px;
+} 
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Id para o logo */
+#logo{
+    width: 100px;
+    padding: 26px;
+    height: 100px;
+}
+
+.nav-links{
+    padding: 5px 25px;
+    margin-left: auto;
+    height: fit-content;
+}
+
+.nav-links li {
+    display: inline-block;
+    margin:  0 20px;   
+}
+
+.nav-links li .fa {
+    color: rgb(195, 208, 228);
+    font-size: 30px;
+    line-height: 60px;
+    transition: .5s;
+    bottom: auto;
+}
+
+.nav-links li .fa:hover{
+    color:rgb(230, 129, 146);
+}
+
+.nav-2{
+  background-color: rgb(195, 208, 228);
+  border-radius: 2px;
+  height: 50px;
+}
+
+.texto-integral{
+    font-size: large;
+    padding-left: 2%;
+}
+
+.texto-integral h1{
+    font-size: xx-large;
+}
