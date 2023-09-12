@@ -1,4 +1,4 @@
-/* Definições gerais do site */
+Definições gerais do site
 *{
     margin:0;
     padding: 0;
@@ -54,7 +54,7 @@ li{
 } 
 
 /* classe Principal do site e das divs */
-main{
+ main{
     height: auto;
     padding:0% 0.1%;
     background-image: url(fundo-integral.jpg);
@@ -71,7 +71,7 @@ nav{
     justify-content: space-between;
 }
 
-/* Id para o logo */
+
 #logo{
     width: 100px;
     padding: 26px;
