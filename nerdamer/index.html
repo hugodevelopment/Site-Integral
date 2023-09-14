@@ -53,33 +53,93 @@
 
     <!-- código em js do  para o calculo da integral em -->
     <script>
+
+
         document.addEventListener('DOMContentLoaded', function() {
-        document.getElementById('calculateButton').addEventListener('click', function() {
-        var expressionInput = document.getElementById('expression');
-        var resultDiv = document.getElementById('resultado');
-        var expression = expressionInput.value;
-        console.log("oi", expression)
+  // Acessamos o id calculateButton e com isso todo processo de cálculo é feito 
+  document.getElementById('calculateButton').addEventListener('click', function() {
+    var expressionInput = document.getElementById('expression');
+    var resultDiv = document.getElementById('resultado');
+    var expression = expressionInput.value;
+    console.log("oi", expression);
 
-        // Resto do seu código de cálculo de integral aqui...
-         // Tente calcular a integral
-         try {
-            console.log("estou no try")
-            // const nerdamer = require('/.nerdamer/all');
-            let integral = nerdamer.integrate(expression, 'x');
-            console.log(integral)
+    // Função para identificar o tipo de função com base no texto da função
+    function identificarTipoFuncao(funcao) {
+      if (funcao.includes('sin') || funcao.includes('cos') || funcao.includes('tan')) {
+        console.log("mf");
+        return 'trigonometrica';
+      } else if (funcao.includes('x') || funcao.includes('^')) {
+        return 'polinomial';
+      } else {
+        return 'outro';
+      }
+    }
 
-            // Exiba o resultado como uma string e adicionando o mathjax
-            resultDiv.innerHTML = 'Resultado: ' + `$$${integral.toString()}$$`;
-        } catch (error) {
-            console.log("estou no catch")
-            resultDiv.textContent = 'Não foi possível calcular a integral.' + integral;
-        }
+    // Função para calcular a integral com base no tipo de função
+    function calcularIntegral() {
+      // Identificar o tipo de função
+      var tipoFuncao = identificarTipoFuncao(expression);
 
-        // Renderiza a fórmula usando MathJax
+      // Objeto com etapas para cada tipo de função
+      const tiposDeFuncao = {
+        trigonometrica: [
+          { descricao: 'Passo 1: Essa é uma função trigonométrica', equacao: `f(x) = ${expression}` },
+          { descricao: 'Passo 2: Calculando a integral...', equacao: `∫f(x) dx = ...` },
+        ],
+        polinomial: [
+          { descricao: 'Passo 1: Identifique a função polinomial', equacao: `f(x) = ${expression}` },
+          { descricao: 'Passo 2: Aplicar a regra dos polinômios', equacao: `∫f(x) dx = ...` },
+        ],
+        outro: [
+          { descricao: 'Passo 1: Esta é uma função desconhecida', equacao: `f(x) = ${expression}` },
+          { descricao: 'Passo 2: Tente outro método de cálculo', equacao: `∫f(x) dx = ...` },
+        ],
+      };
+
+      // Obter as etapas apropriadas com base no tipo de função
+      var etapas = tiposDeFuncao[tipoFuncao];
+
+      var resultadoHTML = 'Resultado:';
+etapas.forEach((etapa, index) => {
+    console.log("pi")
+  resultadoHTML += `$$${etapa.descricao}$$`;
+  console.log(resultadoHTML)
+  if (etapa.equacao) {
+    resultadoHTML += `$$${etapa.equacao}$$`;;
+  }
+});
+
+// resultDiv.innerHTML = resultadoHTML;
+
+
+      // Resto do seu código de cálculo de integral aqui...
+      // Tente calcular a integral
+      try {
+        console.log("estou no try");
+        // const nerdamer = require('/.nerdamer/all');
+        let integral = nerdamer.integrate(expression, 'x');
+        console.log(integral);
+
+        // Exiba o resultado como uma string e adicionando o mathjax
+        // console.log(resultDiv)
+        resultDiv.innerHTML = 'Resultado: ' + `$$${integral.toString()}$$`;
+        // parei aqui
+        resultDiv.innerHTML =  resultadoHTML;
+      } catch (error) {
+        console.log("estou no catch");
+        resultDiv.textContent = 'Não foi possível calcular a integral.' + integral;
+      }
+
+      // Renderiza a fórmula usando MathJax
       MathJax.typesetPromise([resultDiv])
         .catch((err) => console.log('Erro ao renderizar a fórmula:', err));
-    });
+    }
+
+    // Chama a função para calcular a integral
+    calcularIntegral();
+  });
 });
+
      </script>
     </main>
 </body>
