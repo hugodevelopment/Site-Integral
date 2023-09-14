@@ -99,11 +99,11 @@
       // Obter as etapas apropriadas com base no tipo de função
       var etapas = tiposDeFuncao[tipoFuncao];
 
-      var resultadoHTML = 'Resultado:';
-etapas.forEach((etapa, index) => {
+    var resultadoHTML = 'Resultado:';
+    etapas.forEach((etapa, index) => {
     console.log("pi")
-  resultadoHTML += `$$${etapa.descricao}$$`;
-  console.log(resultadoHTML)
+    resultadoHTML += `$$${etapa.descricao}$$`;
+    console.log(resultadoHTML)
   if (etapa.equacao) {
     resultadoHTML += `$$${etapa.equacao}$$`;;
   }
