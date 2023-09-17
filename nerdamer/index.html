@@ -76,66 +76,55 @@
       }
     }
 
-    // Função para calcular a integral com base no tipo de função
-    function calcularIntegral() {
-      // Identificar o tipo de função
-      var tipoFuncao = identificarTipoFuncao(expression);
+  // Função para calcular a integral com base no tipo de função
+function calcularIntegral() {
+  // Identificar o tipo de função
+  var tipoFuncao = identificarTipoFuncao(expression);
 
-      // Objeto com etapas para cada tipo de função
-      const tiposDeFuncao = {
-        trigonometrica: [
-          { descricao: 'Passo 1: É uma função trigonométrica', equacao: `f(x) = ${expression}` },
-          { descricao: 'Passo 2: Calculando a integral:', equacao: `∫f(x) dx = ...` },
-        ],
-        polinomial: [
-          { descricao: 'Passo 1: É uma função polinomial', equacao: `f(x) = ${expression}` },
-          { descricao: 'Passo 2: Aplicar a regra dos polinômios', equacao: `∫f(x) dx = ...` },
-        ],
-        outro: [
-          { descricao: 'Passo 1: Esta é uma função desconhecida', equacao: `f(x) = ${expression}` },
-          { descricao: 'Passo 2: Tente outro método de cálculo', equacao: `∫f(x) dx = ...` },
-        ],
-      };
+   // Calcula a integral
+  let integral;
+  try {
+    integral = nerdamer.integrate(expression, 'x');
+  } catch (error) {
+    integral = null; // Define como nulo se não for possível calcular
+  }
+   
+
+  // Objeto com etapas para cada tipo de função
+  const tiposDeFuncao = {
+    trigonometrica: [
+      { descricao: 'Passo 1: É uma função trigonométrica', equacao: `f(x) = ${expression}`},
+      { descricao: 'Passo 2: Calculando a integral:', equacao:  `∫f(x) dx = ${integral.toString()}`},
+    ],
+    polinomial: [
+      { descricao: 'Passo 1: É uma função polinomial', equacao: `f(x) = ${expression}` },
+      { descricao: 'Passo 2: Aplicar a regra dos polinômios', equacao: `∫f(x) dx = ${integral.toString()}`},
+    ],
+    outro: [
+      { descricao: 'Passo 1: Esta é uma função desconhecida', equacao: `f(x) = ${expression}` },
+      { descricao: 'Passo 2: Tente outro método de cálculo', equacao:  `∫f(x) dx = ${integral.toString()}`},
+    ],
+  };
 
   // Obter as etapas apropriadas com base no tipo de função
   var etapas = tiposDeFuncao[tipoFuncao];
 
-    var resultadoHTML = 'Resultado:';
-    etapas.forEach((etapa, index) => {
-    console.log("pi")
+  var resultadoHTML = 'Resultado:';
+  etapas.forEach((etapa, index) => {
     resultadoHTML += `$$${etapa.descricao}$$`;
-    console.log(resultadoHTML)
-  if (etapa.equacao) {
-    resultadoHTML += `$$${etapa.equacao}$$`;;
-  }
-});
-
-
-      // Resto do seu código de cálculo de integral aqui...
-      // Tente calcular a integral
-      try {
-        console.log("estou no try");
-        // const nerdamer = require('/.nerdamer/all');
-        let integral = nerdamer.integrate(expression, 'x');
-        console.log(integral);
-
-        // Exiba o resultado como uma string e adicionando o mathjax
-        // console.log(resultDiv)
-        resultDiv.innerHTML = 'Resultado: ' + `$$${integral.toString()}$$`;
-        // parei aqui
-        resultDiv.innerHTML =  resultadoHTML;
-      } catch (error) {
-        console.log("estou no catch");
-        resultDiv.textContent = 'Não foi possível calcular a integral.' + integral;
-      }
-
-      // Renderiza a fórmula usando MathJax
-      MathJax.typesetPromise([resultDiv])
-        .catch((err) => console.log('Erro ao renderizar a fórmula:', err));
+    if (etapa.equacao) {
+      resultadoHTML += `$$${etapa.equacao}$$`;
     }
+  });
+  resultDiv.innerHTML = resultadoHTML;
+  
+  // Renderiza a fórmula usando MathJax
+  MathJax.typesetPromise([resultDiv])
+        .catch((err) => console.log('Erro ao renderizar a fórmula:', err));
+}
 
-    // Chama a função para calcular a integral
-    calcularIntegral();
+calcularIntegral();
+
   });
 });
 
