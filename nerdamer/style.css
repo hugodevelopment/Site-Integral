@@ -127,15 +127,29 @@ nav{
   #expression{
     margin: 0;
     padding: 0;
-    width: 100%;
+    width: 50%;
     border-radius: 8px;
-    border-color:rgb(230, 129, 146);
+    border-color:rgb(194, 209, 252);
+  }
+
+  label {
+    color:rgb(194, 209, 252);
+    font-size: large;
+    font-weight: bolder;
+    margin-right: 1%; /* Ajuste a margem direita conforme necessário */
+    margin-left: 5%;
   }
 
   
-  label{
-    margin-bottom: 3%;
-  }
+input[type="text"] {
+  margin-left: 50px; /* Ajuste a margem esquerda conforme necessário */
+}
+
+input::placeholder{
+  color: rgb(53, 75, 136);
+  font-weight: bold;
+  opacity: 0.5;
+}
 
  #resultado{
     background-color: rgb(195, 208, 228);
