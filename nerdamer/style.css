@@ -41,7 +41,7 @@ a{
 }
 
 p{
-    color: rgb(195, 208, 228);
+    color: rgb(91, 131, 190);
     font-size: 1rem;
     font-weight: bolder;
 }
@@ -55,7 +55,7 @@ li{
 
 /* ------------------------------------------------- classe Principal do site e das divs --------------------------------------- */
 main{
-  height: auto;
+  height: 150vh;
   padding:0% 0.1%;
   background-image: url(fundo-integral.jpg);
 }
@@ -179,16 +179,22 @@ button{
   width: 20%;
 }
 
-button:focus {
+button:hover {
   box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 6px 15px 0, rgba(0, 0, 0, .1) 0 2px 2px 0, rgba(50, 151, 211, .3) 0 0 0 4px;
 }
 
  #resultado{
     background-color: rgb(195, 208, 228);
     border-radius: 12px;
-    height: 40%;
+    height: 30%;
     width: 40%;
-    margin-left: 40%;
-    margin-right: 35%;
+    margin-left: 30%;
+    margin-right: 45%;
     text-align: center;
  } 
+
+ .math-expression {
+  font-size: 46px;
+  color: #e01c1c;
+  font-weight: bold;
+}
