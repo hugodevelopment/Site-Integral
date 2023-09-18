@@ -122,6 +122,19 @@ nav{
     align-items: center;
     padding: 30px;
     width: 35%; 
+  } 
+
+  #expression{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    border-radius: 8px;
+    border-color:rgb(230, 129, 146);
+  }
+
+  
+  label{
+    margin-bottom: 3%;
   }
 
  #resultado{
