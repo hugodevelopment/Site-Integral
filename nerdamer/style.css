@@ -111,6 +111,11 @@ nav{
     font-size: xx-large;
 }
 
+.gif{
+  background-color: blue;
+  width: 220px;
+}
+
 .integral {
     text-align: center;
     background-color: rgb(40, 72, 119);
