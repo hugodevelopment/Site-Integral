@@ -55,7 +55,7 @@ li{
 
 /* ------------------------------------------------- classe Principal do site e das divs --------------------------------------- */
 main{
-  height: 150vh;
+  height: 170vh;
   padding:0% 0.1%;
   background-image: url(fundo-integral.jpg);
 }
@@ -111,9 +111,13 @@ nav{
     font-size: xx-large;
 }
 
-.gif{
-  background-color: blue;
+/* Ultima mudança */
+#gif{
   width: 220px;
+  height: 258px;
+  margin-left: 42%;
+  margin-right: 35%;
+  border-radius: 10%;
 }
 
 .integral {
