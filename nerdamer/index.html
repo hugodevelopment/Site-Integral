@@ -2,8 +2,10 @@
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora de Integral</title>
+
     <script id="MathJax-script" async
     src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
   </script>
@@ -11,6 +13,7 @@
 	<script type="text/javascript" async
       src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
   </script> -->
+  
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css'>
   <link rel="stylesheet" href="./style.css">
   <link rel="stylesheet" type="text/css">
@@ -101,7 +104,7 @@ function calcularIntegral() {
     ],
     polinomial: [
       { descricao: 'Passo 1: É uma função polinomial', equacao: `f(x) = ${expression}` },
-      { descricao: 'Passo 2: Aplicar a regra dos polinômios', equacao: `∫f(x) dx = ${integral.toString()}`},
+      { descricao: 'Passo 2: Aplicar a regra dos polinômios:' , equacao: `∫f(x) = ${integral.toString()}`},
     ],
     outro: [
       { descricao: 'Passo 1: Esta é uma função desconhecida', equacao: `f(x) = ${expression}` },

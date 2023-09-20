@@ -192,9 +192,20 @@ button:hover {
     margin-right: 45%;
     text-align: center;
  } 
+ 
+/* ------------------------------ Reponsividade para a tela em celulares --------------------------------------*/
+main{
+  height: 100%;
+  max-width: 100vh;
+}
+.integral,
+#resultado {
+  flex-direction: column;
+  margin-left: 17%;
+  margin-right: 20%;
+  width: 60%;
+}
 
- .math-expression {
-  font-size: 46px;
-  color: #e01c1c;
-  font-weight: bold;
+#funcao{
+  padding: 5%;
 }
