@@ -208,6 +208,12 @@ button:hover {
     height: 100%;
     max-width: 100vh;
   }
+
+  #gif{
+    margin-left: 25%;
+    margin-right: 25%;
+  }
+
   .integral,
   #resultado {
     flex-direction: column;
@@ -228,5 +234,6 @@ button:hover {
     width: 80%;
     margin-right: 10%;
   }
+  
   
 }
