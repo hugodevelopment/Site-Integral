@@ -62,7 +62,8 @@
     <br>
     
     <div id="resultado"> Resultado: 
-      $$\int \frac{x^3}{3} dx = \frac{x^3}{3} + C$$</div>
+      $$\int \frac{x^3}{3} dx = \frac{ax^{x+1}}{n+1} + C$$
+    </div>
 
 
     <!-- código em js do  para o calculo da integral em -->
@@ -75,6 +76,8 @@
     var resultDiv = document.getElementById('resultado');
     var expression = expressionInput.value;
     console.log("oi", expression);
+
+    const regraPolinomial = '∫ax^n dx = (a/(n+1)) * x^(n+1) + C';
 
     // Função para identificar o tipo de função com base no texto da função
     function identificarTipoFuncao(funcao) {
@@ -92,7 +95,8 @@
 function calcularIntegral() {
   // Identificar o tipo de função
   var tipoFuncao = identificarTipoFuncao(expression);
-
+  // Regra geral para integrais de funções polinomiais
+  
    // Calcula a integral
   let integral;
   try {
@@ -110,6 +114,7 @@ function calcularIntegral() {
     ],
     polinomial: [
       { descricao: 'Passo 1: É uma função polinomial', equacao: `f(x) = ${expression}` },
+      
       { descricao: 'Passo 2: Aplicar a regra dos polinômios:' , equacao: `∫f(x) = ${integral.toString()}`},
     ],
     outro: [
@@ -124,10 +129,10 @@ function calcularIntegral() {
   var resultadoHTML = 'Resultado:';
   etapas.forEach((etapa, index) => {
     resultadoHTML += `<p>${etapa.descricao}</p>`;
-    if (etapa.equacao) {
-      resultadoHTML += `$$${etapa.equacao}$$`;
+    resultadoHTML += 
+    resultadoHTML += `$$${etapa.equacao}$$`;
     }
-  });
+  );
   resultDiv.innerHTML = resultadoHTML;
   
   // Renderiza a fórmula usando MathJax
