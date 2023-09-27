@@ -77,7 +77,8 @@
     var expression = expressionInput.value;
     console.log("oi", expression);
 
-    const regraPolinomial = '∫ax^n dx = {ax^{x+1}}{n+1} + C';
+    const regraPolinomial = '\\int x^n\\, dx = \\frac{ax^{n+1}}{n+1} + C';
+
 
     // Função para identificar o tipo de função com base no texto da função
     function identificarTipoFuncao(funcao) {
@@ -114,7 +115,7 @@ function calcularIntegral() {
     ],
     polinomial: [
       { descricao: 'Passo 1: É uma função polinomial', equacao: `f(x) = ${expression}` },
-      { descricao: 'Passo 2: É uma função polinomial', equacao: `f(x) = ${regraPolinomial}`},
+      { descricao: 'Passo 2: É uma função polinomial', equacao: `${regraPolinomial}`},
       { descricao: 'Passo 3: Aplicar a regra dos polinômios:' , equacao: `∫f(x) = ${integral.toString()}`},
     ],
     outro: [
@@ -126,7 +127,7 @@ function calcularIntegral() {
   // Obter as etapas apropriadas com base no tipo de função
   var etapas = tiposDeFuncao[tipoFuncao];
 
-  var resultadoHTML = 'Result:';
+  var resultadoHTML = '';
   etapas.forEach((etapa, index) => {
     resultadoHTML += `<p>${etapa.descricao}</p>`;
     resultadoHTML += `$$${etapa.equacao}$$`;
