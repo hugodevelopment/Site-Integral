@@ -6,32 +6,82 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora de Integral</title>
 
-  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<!-- Testando diretamento no meu diretório raiz
+<script src="./MathJax/es5/tex-mml-chtml.js"></script> -->
 
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/9.5.0/math.js"></script>
-	<script type="text/javascript" async
-      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
-  </script> -->
-  
-  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css'>
-  <link rel="stylesheet" href="./style.css">
-  <link rel="stylesheet" type="text/css">
-  <script src="nerdamer.core.js"></script>
-    <script src="all.min.js"></script>
+<!-- 2º tentativa: Não funciona bem no google crome e edge, só no brave
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>  -->
+
+<!-- 3º tentativa: Renderiza a 1º equação, porém não renderiza as equações do inputm-->
+<!-- <script type="text/javascript" async 
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+</script> -->
+
+<!-- 4º tentativa: Pega a primeira, mas não a 2º
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script> -->
+
+<!-- 5º tentativa: Pegou no brave, porém não nos outros
+<script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>  -->
+
+<!-- 6 tentativa
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    jax: ["input/TeX", "output/HTML-CSS"],
+    extensions: ["tex2jax.js"],
+    "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] },
+    tex2jax: { inlineMath: [ ["$", "$"], ["\\(","\\)"] ], displayMath: [ ["$$","$$"], ["\\[", "\\]"] ], processEscapes: true, ignoreClass: "tex2jax_ignore|dno" },
+    TeX: { noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } } },
+    messageStyle: "none"
+  });
+  </script>    
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script> -->
+
+<!-- 7º Tentativa nao funcionou -->
+<!-- <script type="text/javascript" charset="utf-8" 
+src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML,
+https://vincenttam.github.io/javascripts/MathJaxLocal.js"></script> -->
+
+<!-- 8º tentativa pegou no brave, google chrome e edge e aparetemento no github tbm-->
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script> 
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [ ['$', '$']]
+    }
+  };
+</script>
+
+
+<!-- 8º tentativa- Não pegou para o input
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.js" integrity="sha384-9Nhn55MVVN0/4OFx7EE5kpFBPsEMZxKTCnA+4fqDmg12eCTqGi6+BB2LjY8brQxJ" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script> -->
+
+
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css'>
+<link rel="stylesheet" href="./style.css">
+<link rel="stylesheet" type="text/css">
+<script src="nerdamer.core.js"></script>
+<script src="all.min.js"></script>
 
 </head>
 <body>
     <main>
-        <header>
-			<nav>
-				<img src="Logo.png" id="logo">
-				<!-- Header para o site integral -->
-				<ul class="nav-links">
-					<li> <a href="https://www.youtube.com/@tridev6283" target="_blank"> <i class = "fa fa-youtube"></i> </a></li>
-					<li> <a href="https://www.instagram.com/tridev.tech/" target="_blank"><i class = "fa fa-instagram"></i> </a></li>
-					<li><a href="https://github.com/Hugox96/Site_Derivada" target="_blank"> <i class  = "fa fa-github"></i> </a> </li>
-				</ul>
-			</nav>
+      <header>
+        <nav>
+          <img src="Logo.png" id="logo">
+          <!-- Header para o site integral -->
+          <ul class="nav-links">
+            <li> <a href="https://www.youtube.com/@tridev6283" target="_blank"> <i class = "fa fa-youtube"></i> </a></li>
+            <li> <a href="https://www.instagram.com/tridev.tech/" target="_blank"><i class = "fa fa-instagram"></i> </a></li>
+            <li><a href="https://github.com/Hugox96/Site_Derivada" target="_blank"> <i class  = "fa fa-github"></i> </a> </li>
+          </ul>
+        </nav>
 		</header>
 
     <!-- Texto explicativo sobre integral -->
@@ -65,6 +115,48 @@
       $$\int \frac{x^3}{3} dx = \frac{ax^{x+1}}{n+1} + C$$
     </div>
 
+    <!-- <-- Tag principal para criarmos o footer  --> -->
+    <footer>
+      <!-- Div principal para nosso conteúdo -->
+       <div id="div-conteudo"> 
+         <div id="Quem-Somos">
+           <h1> Quem somos ? </h1> <br>
+           <p> Somos uma plataforma com o objetivo criar aplicações 
+             que auxiliam os alunos a estudarem</p> <br>
+         <ul class="links-ul">
+           <li> <a href="https://docs.google.com/forms/d/1wIPloDocsuXXik8gsmpsVFftjZ30TDCgnAmllq8NphQ/edit" class="footer-link"> Pesquisa </a> </li>
+         </ul>                
+         <!-- Fim da div contatos  -->
+         </div>
+  
+         <div id="Projetos">
+           <h1> Projetos </h1> <br>
+           <p> Estamos desenvolvendo mais sites e já temos
+             uma calculadora de integral indefinida, confira: 
+           </p>  <br>              
+          <ul class="links-ul">
+             <li><a href="https://hugodevelopment.github.io/Integral-MVP/" class="footer-link">Calculadora Integral</a></li>
+          </ul> <br>
+         <!-- Fim da div contatos  -->
+         </div>
+  
+         <!-- Div para enviar email -->
+         <div id="Contribuiçao">
+           <h1> Contribua </h1> <br>
+           <p> Contribuia com qualquer valor abaixo: </p> <br>
+           <div id="qrcode"> 
+            <img src="qrcode.png"  width="110" height="125">  
+           </div>
+      
+         </div>   
+       <!-- fim da div principal  -->
+       </div>
+       
+       <div id="copyright">
+         <p> @ 2023 todos os direitos reservados</p>
+       </div>
+   </footer>  
+
 
     <!-- código em js do  para o calculo da integral em -->
 <script>
@@ -76,14 +168,14 @@
     var resultDiv = document.getElementById('resultado');
     var expression = expressionInput.value;
     console.log("oi", expression);
-
+    
+    // explicação para aparecer nas regras
     const regraPolinomial = '\\int x^n\\, dx = \\frac{ax^{n+1}}{n+1} + C';
 
 
     // Função para identificar o tipo de função com base no texto da função
     function identificarTipoFuncao(funcao) {
       if (funcao.includes('sin') || funcao.includes('cos') || funcao.includes('tan')) {
-        console.log("mf");
         return 'trigonometrica';
       } else if (funcao.includes('x') || funcao.includes('^')) {
         return 'polinomial';
