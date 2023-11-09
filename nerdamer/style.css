@@ -201,6 +201,101 @@ button:hover {
     margin-right: 45%;
     text-align: center;
  } 
+
+
+
+ footer{
+  width: 100%;
+  margin-top: 10%;
+  color: var(--color-neutral-40);
+}
+
+.footer-link {
+  text-decoration: none;
+}
+
+h1{
+  align-items: center;
+  text-align: center;
+}
+
+h1:hover {
+  color: rgb(230, 129, 146);
+  transition: all 0.8s;
+}
+
+/* Aqui modificamos o conteudo do div para criamos o footer */
+#div-conteudo {
+  background-color:rgb(195, 208, 228);
+  /* display grid para estiliziarmos o conteudo */
+  display: grid;
+  /* Aqui criamos 4 colunas com espaço de 1fr entre elas */
+  grid-template-columns: repeat(3, 1fr);
+  padding: 2rem 2rem;
+}
+
+#div-conteudo p{
+color:black;
+}
+
+#div-conteudo h1{
+color:  black;
+}
+
+#div-conteudo h1:hover {
+color: rgb(140, 149, 207);
+transition: all 0.8s;
+}
+
+
+#Quem-Somos{
+  margin-left: 1rem;
+}
+
+#Projetos{
+  margin-left: 1rem;
+}
+
+#Contribuiçao{
+  margin-left: 1rem;
+}
+
+
+/* centralizando imagem */
+#qrcode{
+display: flex;
+justify-content: center;
+}
+
+.links-ul {
+  /* utilziando o flexbox para editar os links */
+  display: flex;
+  /* direção da coluna no flex */
+  flex-direction: column;
+  /* espaçamento da coluna */
+  gap: 1.5rem;
+  margin-left: -1em;
+  list-style: none;
+}
+
+.links-ul li a{
+color:black;
+}
+
+.links-ul .footer-link:hover {
+  color: rgb(140, 149, 207);
+  transition: all 0.8s;
+}
+
+#copyright {
+  display: flex;
+  justify-content: center;
+  background-color: black;
+  font-size: 0.9rem;
+  padding: 0.5rem;
+  font-weight: 100;
+}
+
  
 /* ------------------------------ Reponsividade para a tela em celulares --------------------------------------*/
 @media (max-width: 450px) {
