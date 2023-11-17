@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.4.0/math.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/nerdamer/0.18.0/nerdamer.core.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/nerdamer/0.18.0/Algebra.min.js"></script>
+</head>
+<body>
+  <script>
+    function calcularDerivada(funcao) {
+      let passos = [];
+
+      // Passo 1: Identificar a função
+      passos.push({ descricao: 'Passo 1: Identifique a função:', equacao: `f(x) = ${funcao}` });
+
+      // Passo 2: Dividir a função em termos
+      let termos = funcao.split(' ');
+
+      // Passo 3: Calcular a derivada de cada termo
+      for (let i = 0; i < termos.length; i++) {
+        let termo = termos[i];
+        
+        // Converte o termo para uma expressão válida do nerdamer
+        let expr = nerdamer(termo);
+        // Calcula a derivada do termo
+        let derivada = nerdamer.diff(expr, 'x').toString();
+        
+        passos.push({ descricao: `Passo ${i+2}: A derivada de ${termo} é:`, equacao: `f'(x) = ${derivada}` });
+      }
+
+      return passos;
+    }
+
+    let funcao = '2x + 1';
+    funcao = funcao.replace(/\+/g, ' + ').replace(/\-/g, ' - ');
+    let passos = calcularDerivada(funcao);
+
+    console.log(passos);
+  </script>
+</body>
+</html>
